@@ -1,14 +1,14 @@
-# 📚 React Learning Platform
+#  React e-Learning Platform
 
 Une plateforme d'apprentissage construite avec **React + Tailwind CSS**, permettant :
-✅ Affichage des cours avec recherche  
-✅ Page de détail avec **lecteur vidéo** et **doublage audio**  
-✅ Authentification simple avec **localStorage**  
-✅ Navigation sécurisée (protection des routes)  
+ Affichage des cours avec recherche  
+ Page de détail avec **lecteur vidéo** et **doublage audio**  
+ Authentification simple avec **localStorage**  
+ Navigation sécurisée (protection des routes)  
 
 ---
 
-## 🚀 Fonctionnalités
+## Fonctionnalités
 
 - Page d’accueil avec liste des cours (titre, auteur, image)
 - Détail d’un cours avec lecteur vidéo
@@ -60,14 +60,14 @@ e-Learning-app/my-project/
 
 ---
 
-## ▶️ Installation & Exécution
+##  Installation & Exécution
 
 ```bash
 # 1. Cloner le projet
-git clone 
+git clone https://github.com/DONGBETO/e-learning-app.git
 
 # 2. Aller dans le dossier
-cd 
+cd e-learning-app puis cd my-project
 
 # 3. Installer les dépendances
 npm install
