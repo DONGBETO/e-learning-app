@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "title": "Introduction à React",
+    "author": "Jean Dupont",
+    "language": "Français",
+    "desc" : "React est une bibliothèque pour des interfaces utilisateurs web et natives. Construisez des interfaces utilisateurs à partir de briques individuelles. Grâce à React, il est facile de créer des interfaces utilisateurs interactives. Définissez des vues simples pour chaque état de votre application.",
+    "image": "/images/react.jpg",
+    "video": "/videos/react-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 2,
+    "title": "Node.js avancé",
+    "author": "Claire Gbaguidi",
+    "language": "Français",
+    "desc":  "Node.js est un environnement d'exécution JavaScript open source et multiplateforme qui permet aux développeurs d'exécuter du code JavaScript en dehors d'un navigateur web. Il repose sur le moteur JavaScript V8 de Chrome, reconnu pour ses hautes performances." ,
+    "image": "/images/node.jpg",
+    "video": "/videos/node-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 3,
+    "title": "Mastering Python",
+    "author": "John Smith",
+    "language": "Anglais",
+    "desc": "Python is an interpreted, general-purpose programming language that emphasizes code readability through its use of heavy indentation. Its object-oriented approach helps programmers write clear and logical code for both small and large-scale projects. Python has a comprehensive standard library and supports a wide range of third-party libraries. Therefore, Python is the choice of most developers for data science and machine learning applications.",
+    "image": "/images/python.jpg",
+    "video": "/videos/python-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 4,
+    "title": "CSS for Beginners",
+    "author": "Linda Zhao",
+    "language": "Anglais",
+    "desc": "CSS is used to format and organize content on a web page, for example by changing the font, color, size",
+    "image": "/images/css.jpg",
+    "video": "/videos/css-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 5,
+    "title": "Introduction à Excel",
+    "author": "Jean Lorent",
+    "language": "Français",
+    "desc": "Microsoft Excel est le tableur à la pointe du secteur, un puissant outil de visualisation et d'analyse de données. Effectuez des analyses encore plus ",
+    "image": "/images/excel.jpg",
+    "video": "/videos/excel-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 6,
+    "title": "Apprendre JavaScript",
+    "author": "Claire Gbaguidi",
+    "language": "Anglais",
+    "desc": "JavaScript is a programming language that allows you to implement complex mechanisms on a web page. Anytime a web page does more than simply display static content—displaying content that updates at set times, interactive maps, 2D/3D animations, scrolling video menus, or something else—JavaScript is likely involved.",
+    "image": "/images/javascript.jpg",
+    "video": "/videos/javascript-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 7,
+    "title": "Apprendre PHP",
+    "author": "John Smith",
+    "language": "Anglais",
+    "desc" :"PHP is a popular general-purpose scripting language that powers everything from your blog to the most popular websites in the world.",
+    "image": "/images/php.jpg",
+    "video": "/videos/php-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  },
+  {
+    "id": 8,
+    "title": "Apprendre Laravel",
+    "author": "Linda Zhao",
+    "language": "Anglais",
+    "desc": "Laravel provides a complete ecosystem for web artisans. Our open source PHP framework, products, packages, and starter kits offer everything you need to build.",
+    "image": "/images/laravel.jpg",
+    "video": "/videos/laravel-fr.mp4",
+    "dubbedVideo": "/audios/audio.mp3"
+  }
+]
