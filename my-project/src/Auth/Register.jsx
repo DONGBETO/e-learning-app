@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { login } from '../utils/auth';
 
 const Register = () => {
   const [email, setEmail] = useState('');
@@ -10,8 +9,9 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      login(email);
-      navigate('/');
+      // Ici, on ne fait pas de login automatique
+      alert('Compte créé avec succès ! Veuillez vous connecter.');
+      navigate('/login'); // ✅ Redirige vers la page de connexion
     } else {
       alert('Veuillez remplir tous les champs.');
     }

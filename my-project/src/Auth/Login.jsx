@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { login } from '../utils/auth';
 
-const Login = () => {
+const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
@@ -10,8 +10,9 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (email && password) {
-      login(email);
-      navigate('/');
+      login(email);       // Stocke l'utilisateur dans localStorage
+      onLogin();          // ✅ Met à jour l'état dans App.jsx
+      navigate('/');      // Redirige vers Home
     } else {
       alert('Veuillez remplir tous les champs.');
     }
