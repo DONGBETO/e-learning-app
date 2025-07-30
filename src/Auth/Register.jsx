@@ -1,21 +1,41 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import { saveUser } from '../utils/auth';
+import CryptoJS from 'crypto-js';
+
 
 const Register = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email && password) {
-      // Ici, on ne fait pas de login automatique
-      alert('Compte créé avec succès ! Veuillez vous connecter.');
-      navigate('/login'); // ✅ Redirige vers la page de connexion
-    } else {
-      alert('Veuillez remplir tous les champs.');
+  const validateEmail = (email) => /\S+@\S+\.\S+/.test(email);
+
+ const handleSubmit = (e) => {
+  e.preventDefault();
+  if (email && password) {
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+
+    // Vérifie si l'email existe déjà
+    const existingUser = users.find(u => u.email === email);
+    if (existingUser) {
+      alert('Cet utilisateur existe déjà.');
+      return;
     }
-  };
+
+    // Hash du mot de passe
+    const hashedPassword = CryptoJS.SHA256(password).toString();
+
+    const newUser = { email, password: hashedPassword };
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+
+    alert('Compte créé avec succès ! Veuillez vous connecter.');
+    navigate('/login');
+  } else {
+    alert('Veuillez remplir tous les champs.');
+  }
+};
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#f1f5f9] px-4">
@@ -63,7 +83,6 @@ const Register = () => {
             <Link to="/login" className="text-blue-600 hover:underline">Sign in</Link>
           </p>
         </div>
-
       </div>
     </div>
   );

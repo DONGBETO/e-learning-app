@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { login } from '../utils/auth';
+import { login, getUsers } from '../utils/auth';
+import CryptoJS from 'crypto-js';
 
 const Login = ({ onLogin }) => {
   const [email, setEmail] = useState('');
@@ -9,13 +10,32 @@ const Login = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (email && password) {
-      login(email);       // Stocke l'utilisateur dans localStorage
-      onLogin();          // ✅ Met à jour l'état dans App.jsx
-      navigate('/');      // Redirige vers Home
-    } else {
+
+    if (!email || !password) {
       alert('Veuillez remplir tous les champs.');
+      return;
     }
+
+    const users = getUsers();
+    const existingUser = users.find((u) => u.email === email);
+
+    if (!existingUser) {
+      alert("Cet utilisateur n'existe pas. Veuillez vous inscrire.");
+      return;
+    }
+
+    // Hache le mot de passe entré pour comparaison
+    const hashedInputPassword = CryptoJS.SHA256(password).toString();
+
+    if (existingUser.password !== hashedInputPassword) {
+      alert('Mot de passe incorrect.');
+      return;
+    }
+
+    // Connexion réussie
+    login(email);
+    onLogin();
+    navigate('/');
   };
 
   return (
@@ -65,7 +85,6 @@ const Login = ({ onLogin }) => {
             <Link to="/register" className="text-blue-600 hover:underline">Create an account</Link>
           </p>
         </div>
-
       </div>
     </div>
   );

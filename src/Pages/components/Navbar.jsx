@@ -18,15 +18,15 @@ const Navbar = ({ loggedIn, onLogout }) => {
         </Link>
 
         <div className="space-x-4 text-sm">
-          <Link to="/" className="text-gray-700 hover:text-blue-600">Accueil</Link>
+          <Link to="/" className="text-gray-700 hover:text-blue-600">Home</Link>
           {loggedIn ? (
             <>
-              <Link to="/" className="text-gray-700 hover:text-blue-600">Mes Cours</Link>
+              <Link to="/" className="text-gray-700 hover:text-blue-600">My courses</Link>
               <button
                 onClick={handleLogout}
                 className="text-red-600 hover:underline ml-4"
               >
-                Déconnexion
+                Logout
               </button>
             </>
           ) : (
